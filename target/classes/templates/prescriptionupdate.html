@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Update Prescription</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<style>
+		body {
+			background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAZKGBACawegGori7edGv1fKpEse6WMVjDHygIDtvyOarlqaCTiUbJRpLW0JMQf3_5420&usqp=CAU');
+			background-size: cover;
+			background-repeat: no-repeat;
+			color: white;
+		}
+
+		label {
+			color: white;
+			/* Set label color to white */
+		}
+
+		table.table tbody tr td {
+			color: white;
+		}
+	</style>
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<a class="navbar-brand" href="/users">Home</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+			aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a class="nav-link" href="/appointments">Appointments</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/billing">Billing Information</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/doctors">Doctors</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/patients">Patients</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/prescriptions">Prescriptions</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link active" aria-current="page" th:href="@{/logout}">Logout</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<div class="container mt-3">
+		<h2 class="mb-4">Update Prescription</h2>
+
+		<form th:object="${prescription}" th:action="@{/prescriptions/save}" method="post">
+			<input type="hidden" th:field="*{id}" />
+
+			<div class="form-group">
+				<label for="prescriptionDetails">Prescription Details:</label>
+				<textarea class="form-control" th:field="*{prescriptionDetails}" rows="4" required></textarea>
+			</div>
+
+			<button type="submit" class="btn btn-primary">Update Prescription</button>
+		</form>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>

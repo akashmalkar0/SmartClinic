@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<title>Appointments</title>
+	<style>
+		body {
+			background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAZKGBACawegGori7edGv1fKpEse6WMVjDHygIDtvyOarlqaCTiUbJRpLW0JMQf3_5420&usqp=CAU');
+			background-size: cover;
+			background-repeat: no-repeat;
+			color: white;
+		}
+
+		label {
+			color: white;
+			/* Set label color to white */
+		}
+
+		table.table tbody tr td {
+			color: white;
+			font-size: 19px
+		}
+	</style>
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<a class="navbar-brand" href="/users">Home</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+			aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a class="nav-link" href="/appointments">Appointments</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/billing">Billing Information</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/doctors">Doctors</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/patients">Patients</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/prescriptions">Prescriptions</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link active" aria-current="page" th:href="@{/logout}">Logout</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<div class="container mt-3">
+		<h2 class="mb-4">All Appointments</h2>
+
+		<table class="table table-bordered">
+			<thead class="thead-dark">
+				<tr>
+					<th>ID</th>
+					<th>Doctor Name</th>
+					<th>Patient Name</th>
+					<th>Date & Time</th>
+					<th>Purpose</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="appointment : ${allAppointments}">
+					<td th:text="${appointment.id}"></td>
+					<td th:text="${appointment.doctorName}"></td>
+					<td th:text="${appointment.patientName}"></td>
+					<td th:text="${appointment.dateTime}"></td>
+					<td th:text="${appointment.purpose}"></td>
+					<td>
+						<a class="btn btn-primary btn-sm"
+							th:href="@{/appointments/edit/{id}(id=${appointment.id})}">Edit</a>
+						<a class="btn btn-danger btn-sm" th:href="@{/appointments/delete/{id}(id=${appointment.id})}"
+							onclick="return confirm('Are you sure?')">Delete</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<a class="btn btn-success" th:href="@{/appointments/add}">Add New Appointment</a>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>

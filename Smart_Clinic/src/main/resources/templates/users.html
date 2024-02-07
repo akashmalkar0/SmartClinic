@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<title>Smart Clinic</title>
+	<style>
+		body {
+			background-image: url('https://e1.pxfuel.com/desktop-wallpaper/441/364/desktop-wallpaper-amazing-ultra-doctors-backgrounds-medical-doctor-thumbnail.jpg');
+			background-size: cover;
+			background-repeat: no-repeat;
+			color: black;
+			/* Changed text color to black */
+			font-size: 20px;
+			/* Increased font size further */
+		}
+
+		.container {
+			margin-top: 50px;
+			/* Added to create space from the top */
+		}
+
+		.service {
+			margin-bottom: 30px;
+		}
+
+		.service h2 {
+			color: #007bff;
+			/* Added color for service headings */
+		}
+
+		label {
+			color: white;
+			/* Set label color to white */
+		}
+
+		table.table tbody tr td {
+			color: white;
+		}
+	</style>
+</head>
+
+<body>
+
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<a class="navbar-brand" href="/users">Home</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+			aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a class="nav-link" href="/appointments">Appointments</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/billing">Billing Information</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/doctors">Doctors</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/patients">Patients</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/prescriptions">Prescriptions</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link active" aria-current="page" th:href="@{/logout}">Logout</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h1>Welcome to Smart Clinic</h1>
+				<p>Smart Clinic provides comprehensive healthcare services to our patients. Our dedicated team of
+					doctors,
+					nurses, and staff are committed to providing high-quality medical care with compassion and
+					professionalism.</p>
+				<p>Explore our website to learn more about our services, make appointments, access billing information,
+					and
+					manage your prescriptions.</p>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-4 service">
+				<h2>Primary Care</h2>
+				<p>Comprehensive primary care services for individuals of all ages, including routine check-ups,
+					vaccinations, and health screenings.</p>
+			</div>
+			<div class="col-md-4 service">
+				<h2>Specialized Treatments</h2>
+				<p>Advanced treatments and procedures provided by specialists in various fields, including cardiology,
+					orthopedics, and neurology.</p>
+			</div>
+			<div class="col-md-4 service">
+				<h2>Emergency Care</h2>
+				<p>24/7 emergency medical services, equipped to handle a wide range of urgent medical conditions and
+					injuries.</p>
+			</div>
+		</div>
+
+		<!-- Add more services here -->
+		<div class="row">
+			<div class="col-md-4 service">
+				<h2>Surgical Services</h2>
+				<p>State-of-the-art surgical procedures performed by skilled surgeons with advanced equipment and
+					technology.</p>
+			</div>
+			<div class="col-md-4 service">
+				<h2>Maternity Care</h2>
+				<p>Comprehensive maternity care including prenatal care, delivery services, and postnatal care for
+					expectant mothers and newborns.</p>
+			</div>
+			<div class="col-md-4 service">
+				<h2>Diagnostic Imaging</h2>
+				<p>Advanced diagnostic imaging services such as X-rays, MRI scans, CT scans, and ultrasound to aid in
+					accurate diagnosis and treatment planning.</p>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>

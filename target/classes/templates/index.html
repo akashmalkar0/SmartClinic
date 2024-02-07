@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Smart Clinic</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<style>
+		body {
+			background-image: url('https://c4.wallpaperflare.com/wallpaper/792/748/62/dna-microscope-wallpaper-preview.jpg');
+			background-size: cover;
+			background-repeat: no-repeat;
+			color: white;
+			font-size: 18px;
+			/* Set font size to 18 pixels */
+		}
+
+		label {
+			color: white;
+			/* Set label color to white */
+		}
+
+		h1,
+		p {
+			font-size: 24px;
+			/* Set font size for headings and paragraphs */
+		}
+
+		table.table tbody tr td {
+			color: white;
+		}
+	</style>
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<div class="container-fluid">
+			<a class="navbar-brand" th:href="@{/index}">About</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+				data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item">
+						<a class="nav-link active" aria-current="page" th:href="@{/register}">Register</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link active" aria-current="page" th:href="@{/service}">Services</a>
+					</li>
+
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<br /><br />
+	<div class="container">
+		<div class="row">
+			<h1 class="text-center">About Smart Clinic</h1>
+			<p>
+				Smart Clinic is a state-of-the-art medical facility dedicated to providing exceptional healthcare
+				services to our community. With a team of experienced healthcare professionals and advanced medical
+				technologies, we strive to deliver comprehensive and compassionate care to our patients.
+			</p>
+			<p>
+				Our mission is to improve the health and well-being of individuals and families by offering accessible,
+				high-quality medical services in a welcoming and supportive environment. Whether you're seeking routine
+				check-ups, specialized treatments, or emergency care, you can trust Smart Clinic to prioritize your
+				health and safety.
+			</p>
+			<p>
+				At Smart Clinic, we are committed to continuous innovation and excellence in healthcare delivery. We
+				embrace new technologies and evidence-based practices to ensure that our patients receive the best
+				possible outcomes. Additionally, we prioritize patient education and empowerment, empowering individuals
+				to make informed decisions about their health and wellness.
+			</p>
+
+			<p>Comprehensive primary care services for individuals of all ages, including
+				routine check-ups, vaccinations, and health screenings.</p>
+			<p>Advanced treatments and procedures provided by specialists in various
+				fields, including cardiology, orthopedics, and neurology.</p>
+			<p>24/7 emergency medical services, equipped to handle a wide range of urgent
+				medical conditions and injuries.</p>
+			<p>Comprehensive maternity care including prenatal care, delivery services,
+				and postnatal care for expectant mothers and newborns.</p>
+			<p>Advanced diagnostic imaging services such as X-rays, MRI scans, CT scans,
+				and ultrasound to aid in accurate diagnosis and treatment planning.</p>
+			<p>Customized physical therapy programs to help patients recover from
+				injuries, surgeries, or chronic conditions and improve mobility and function.</p>
+			<p>Comprehensive mental health services including counseling, therapy, and
+				psychiatric evaluations to support patients' emotional and psychological well-being.</p>
+			<p>Individualized nutritional counseling and diet planning to promote healthy
+				eating habits and manage medical conditions such as diabetes, obesity, and heart disease.
+			</p>
+			<p>Convenient pharmacy services offering prescription medications,
+				over-the-counter
+				drugs, and medication counseling by licensed pharmacists.</p>
+			<p>Professional medical care and support services provided in the comfort of
+				patients' homes, including nursing care, rehabilitation, and assistance with daily
+				activities.
+			</p>
+			<p>
+				Thank you for choosing Smart Clinic for your healthcare needs. We look forward to serving you and your
+				family with dedication, integrity, and compassion.
+			</p>
+		</div>
+	</div>
+</body>
+
+</html>
